@@ -1,4 +1,3 @@
-
 const express = require("express");
 const expressLayouts = require("express-ejs-layouts");
 const mongoose = require("mongoose");
@@ -7,7 +6,9 @@ const dotenv = require("dotenv");
 // init app
 const app = express();
 // load config
-dotenv.config({ path: ".env" });
+if (process.env.NODE_ENV !== "production") {
+  dotenv.config({ path: ".env" });
+}
 // routes
 // const indexRouter = require("./routes/index");
 

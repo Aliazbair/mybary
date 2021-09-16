@@ -11,6 +11,11 @@ if (process.env.NODE_ENV !== "production") {
 }
 // routes
 // const indexRouter = require("./routes/index");
+const { router } = require("./routes/author");
+
+// setup body parsing
+app.use(express.json());
+app.use(express.urlencoded({limit:'10mb', extended: true }));
 
 // set view & view & layout
 app.set("view engine", "ejs");
@@ -30,6 +35,7 @@ db.once("open", () => console.log("Connected to Mongoose"));
 // setup routes
 // app.use("/", indexRouter);
 app.use("/", require("./routes/index"));
+app.use("/author", router);
 
 // setup port
 app.listen(process.env.PORT || 3000);

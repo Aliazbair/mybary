@@ -7,6 +7,9 @@
     <title>Libs App</title>
   </head>
   <body>
-    before <%- body%> after
+    <!-- include header -->
+    <%- include('../partials/header.ejs') %> 
+   <%- include('../partials/errorMessage.ejs') %> 
+    <%- body%>
   </body>
 </html>

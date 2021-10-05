@@ -18,6 +18,7 @@ const ALLProjects = async (req, res, next) => {
   try {
     const projects = await Projects.find({});
     res.status(200).json(projects);
+    console.log(2222);
   } catch (err) {
     console.log(err);
     res.status(500).json({ message: "server errors" });

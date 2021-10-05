@@ -36,6 +36,8 @@ db.once("open", () => console.log("Connected to Mongoose"));
 // app.use("/", indexRouter);
 app.use("/", require("./routes/index"));
 app.use("/author", router);
+app.use("/books/", require("./routes/books"));
+app.use("/projects", require("./routes/projects"));
 
 // setup port
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT,()=>console.log(`server running in port ${process.env.PORT}`));

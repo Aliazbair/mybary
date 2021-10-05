@@ -1,0 +1,31 @@
+<div class="form-group">
+  <label for="title">Title</label>
+  <input
+    type="text"
+    name="title"
+    class="form-control"
+    placeholder="Title"
+    value="<%- book.title %> "
+  />
+</div>
+<div class="form-group">
+  <label for="author">Author</label>
+  <select class="form-control" name="author" class="form-controllr">
+    <!-- loop throw authors -->
+    <% authors.forEach(author=>{%> <% if(author.id === book.author){%>
+    <option selected value="<%= author.id %> "><%= author.name %></option>
+
+    <% } else {%>
+    <option value="<%= author.id %> "><%= author.name %></option>
+    <%} %> <%}) %>
+  </select>
+</div>
+<div class="form-group">
+  <label for="publish date">Publish Date</label>
+  <input
+    class="form-control"
+    type="date"
+    name="publishDate"
+    value="<%= book.publishDate %> "
+  />
+</div>

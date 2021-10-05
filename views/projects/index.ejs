@@ -1,0 +1,10 @@
+<h2 class='text-center text-danger'>search projects</h2>
+<form action="/projects" method="GET">
+  <label class="control-label" for="name">Project Name</label>
+  <input class="form-control" type="text" name="name" placeholder="search author" value="<%= searchOption.name %> " />
+  <button type='submit' class="btn btn-info mt-3">search</button>
+</form>
+<br>
+<% authors.forEach(author=>{%>
+  <div class='card'><%= author.name %> </div>
+<%}) %> 
